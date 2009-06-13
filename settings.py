@@ -63,7 +63,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'skeleton.urls'
+ROOT_URLCONF = 'django-skeleton.urls'
 
 TEMPLATE_DIRS = (
   os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
@@ -78,5 +78,5 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'skeleton.template_lib',
+    'django-skeleton.template_lib',
 )
