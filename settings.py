@@ -78,5 +78,5 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django-skeleton.template_lib',
+    'django-skeleton.template_libs',
 )

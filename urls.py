@@ -8,8 +8,11 @@ from django.views.generic.simple import direct_to_template
 
 admin.autodiscover()
 
-#admin and login/logout
+#defaults -- index, admin, login, logout, profile
 urlpatterns = patterns('',
+  (r'^$', direct_to_template, {
+    'template': 'index.html'
+  }),
   (r'^admin/(.*)', admin.site.root),
   (r'^accounts/login/$',  login),
   (r'^accounts/logout/$', logout),
@@ -23,9 +26,3 @@ if settings.DEBUG:
   urlpatterns += patterns('',
     (r'^site_media/(.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
   )
-
-urlpatterns += patterns('',
-  (r'^$', direct_to_template, {
-    'template': 'index.html'
-  }),
-)

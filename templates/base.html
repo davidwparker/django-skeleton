@@ -1,3 +1,4 @@
+{% load templatetags %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html lang="en">
 <head>
@@ -10,14 +11,24 @@
 </head>
 <body>
   <div class="container">
-  <ul>
-    <li><a href="/">index</a></li>
-    <li><a href="/admin/">admin</a></li>
-    <li><a href="/accounts/login/">login</a></li>
-    <li><a href="/accounts/logout/">logout</a></li>
-  </ul>
-  <h1>{% block h1 %}{% endblock %}</h1>
-  <div>{% block content %}{% endblock %}</div>
+    <div class="header">
+      {% if user.is_authenticated %}
+      Hello {{ user.username }}! Not {{user.username}}? Click <a href="/accounts/logout">here</a> to logout.
+      {% endif %}
+    </div>
+    <ul class="navigation">
+      {% block navigation%}
+      <li><a href="/">index</a></li>
+      <li><a href="/admin/">admin</a></li>
+      <li><a href="/accounts/login/">login</a></li>
+      <li><a href="/accounts/logout/">logout</a></li>
+      {% endblock %}
+    </ul>
+    <h1>{% block h1 %}{% endblock %}</h1>
+    <div class="content">{% block content %}{% endblock %}</div>
+    <div class="footer">
+      {% copyright_tag "2005" %} <a href="http://davidwparker.com">david parker</a>
+    </div>
   </div>
 </body>
 </html>
