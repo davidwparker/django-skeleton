@@ -13,6 +13,9 @@ urlpatterns = patterns('',
   (r'^admin/(.*)', admin.site.root),
   (r'^accounts/login/$',  login),
   (r'^accounts/logout/$', logout),
+  (r'^accounts/profile/$', direct_to_template, {
+    'template': 'registration/profile.html'
+  }),
 )
 
 #static content for development
