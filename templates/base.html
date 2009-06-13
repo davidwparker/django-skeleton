@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="/site_media/css/screen.css" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <!--[if IE]> 
+    <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+</head>
+<body>
+  <div class="container">
+  <ul>
+    <li><a href="/">index</a></li>
+    <li><a href="/admin/">admin</a></li>
+    <li><a href="/accounts/login/">login</a></li>
+    <li><a href="/accounts/logout/">logout</a></li>
+  </ul>
+  <h1>{% block h1 %}{% endblock %}</h1>
+  <div>{% block content %}{% endblock %}</div>
+  </div>
+</body>
+</html>
