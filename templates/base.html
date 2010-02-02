@@ -18,10 +18,16 @@
     </div>
     <ul class="navigation">
       {% block navigation%}
-      <li><a href="/">index</a></li>
-      <li><a href="/admin/">admin</a></li>
-      <li><a href="/accounts/login/">login</a></li>
-      <li><a href="/accounts/logout/">logout</a></li>
+        <li><a href="/">index</a></li>
+        {% if user.is_superuser %}
+        <li><a href="/admin/">admin</a></li>
+        {% endif %}
+        {% if not user.is_authenticated %}
+        <li><a href="/accounts/login/">login</a></li>
+        {% else %}
+        <li><a href="/accounts/profile/">profile</a></li>
+        <li><a href="/accounts/logout/">logout</a></li>
+        {% endif %}
       {% endblock %}
     </ul>
     <h1>{% block h1 %}{% endblock %}</h1>

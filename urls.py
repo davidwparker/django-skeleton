@@ -13,7 +13,7 @@ urlpatterns = patterns('',
   (r'^$', direct_to_template, {
     'template': 'index.html'
   }),
-  (r'^admin/(.*)', admin.site.root),
+  (r'^admin/(.*)', include(admin.site.urls)),
   (r'^accounts/login/$',  login),
   (r'^accounts/logout/$', logout),
   (r'^accounts/profile/$', direct_to_template, {
